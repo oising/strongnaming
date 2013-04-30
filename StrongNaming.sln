@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrongNaming", "StrongNaming\StrongNaming.csproj", "{96D292D8-D29E-44FC-B3D4-72EA26E48A5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DD7E71F1-AD68-4C77-B5B2-5B63F3F27860}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyLibrary", "DummyLibrary\DummyLibrary.csproj", "{9C217A8C-E78A-40E5-A957-F0FBEBB60DA2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96D292D8-D29E-44FC-B3D4-72EA26E48A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96D292D8-D29E-44FC-B3D4-72EA26E48A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96D292D8-D29E-44FC-B3D4-72EA26E48A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96D292D8-D29E-44FC-B3D4-72EA26E48A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C217A8C-E78A-40E5-A957-F0FBEBB60DA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C217A8C-E78A-40E5-A957-F0FBEBB60DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C217A8C-E78A-40E5-A957-F0FBEBB60DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C217A8C-E78A-40E5-A957-F0FBEBB60DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
