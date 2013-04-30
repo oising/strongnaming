@@ -15,6 +15,8 @@ About
 A set of PowerShell Cmdlets to facilitate signing of unsigned 3rd party assemblies with a key
 of your choice, to allow them to be referenced by strongly named projects.
 
+A NuGet package is available at: https://nuget.org/packages/Nivot.StrongNaming
+
 Syntax
 -------
 
