@@ -108,7 +108,7 @@ namespace StrongNaming
         private static byte[] GetKeyTokenFromKey(byte[] fullKey)
         {
             byte[] hash;
-            using (SHA1CryptoServiceProvider sha1 = SHA1CryptoServiceProvider.Create())
+            using (SHA1 sha1 = SHA1CryptoServiceProvider.Create())
                 hash = sha1.ComputeHash (fullKey);
 
             return hash.Reverse().Take(8).ToArray();
