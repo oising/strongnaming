@@ -1,6 +1,8 @@
 ﻿using System.IO;
+using System.Linq;
 using System.Management.Automation;
 using System.Reflection;
+using System.Security.Cryptography;
 using Mono.Cecil;
 
 namespace StrongNaming
@@ -71,6 +73,15 @@ namespace StrongNaming
                 assembly.Name.HasPublicKey = true;
                 assembly.Name.Attributes &= AssemblyAttributes.PublicKey;
 
+                byte[] token = GetKeyTokenFromKey(KeyPair.PublicKey);
+                foreach (var reference in assembly.MainModule.AssemblyReferences)
+                {
+                    if (reference.PublicKeyToken.Length != 0)
+                        continue;
+
+                    reference.PublicKeyToken = token;
+                }
+
                 if (DelaySign.IsPresent)
                 {
                     assembly.Write(filePath);
@@ -92,6 +103,15 @@ namespace StrongNaming
                     WriteObject(new FileInfo(filePath));
                 }
             }
+        }
+
+        private static byte[] GetKeyTokenFromKey(byte[] fullKey)
+        {
+            byte[] hash;
+            using (SHA1 sha1 = SHA1CryptoServiceProvider.Create())
+                hash = sha1.ComputeHash (fullKey);
+
+            return hash.Reverse().Take(8).ToArray();
         }
     }
 }
