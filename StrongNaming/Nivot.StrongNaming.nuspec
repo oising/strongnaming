@@ -103,6 +103,6 @@ PM&gt; dir -rec *.dll | where { -not (test-strongname $_) } | set-strongname -ke
         <file src="..\packages\Mono.Cecil.0.9.5.4\lib\net35\Mono.Cecil.dll" target="tools\Mono.Cecil.dll" />
         <file src="bin\Release\Nivot.PowerShell.StrongNaming.dll" target="tools\Nivot.PowerShell.StrongNaming.dll" />
         <file src="Scripts\StrongNaming.psd1" target="tools\StrongNaming.psd1" />
-        <file src="readme.txt" target="readme.txt" />
+        <file src="..\readme.md" target="readme.md" />
     </files>
 </package>
