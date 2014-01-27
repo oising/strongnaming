@@ -1,3 +1,4 @@
+# this is a comment
 
 if (-not $dte) {
     write-warning "Not running in NuGet PM console. Package related functions are disabled."
@@ -7,18 +8,18 @@ if (-not $dte) {
 }
 
 function Update-PackageReferenceCache {
-	if (-not $dte) { return }
+    if (-not $dte) { return }
 
-	if (-not (test-path $packagesRoot)) {
-		write-warning "No package repository found."
-		return
-	}
+    if (-not (test-path $packagesRoot)) {
+        write-warning "No package repository found."
+        return
+    }
 
-	dir -rec $packagesRoot -include *.nuspec | % {
-		$m = [xml](gc $_.fullname)
-		$SCRIPT:packageCache[$m.package.metadata.id] = $m.package.metadata.references.reference | `
-			select -expand file
-	}
+    dir -rec $packagesRoot -include *.nuspec | % {
+        $m = [xml](gc $_.fullname)
+        $SCRIPT:packageCache[$m.package.metadata.id] = $m.package.metadata.references.reference | `
+            select -expand file
+    }
 }
 
 function Get-ProjectReference {
@@ -40,12 +41,12 @@ function Get-ProjectReference {
     
     $project = get-project -name $ProjectName
         
-	$project.object.references | where-object {
-		(-not $_.strongname) -or $IncludeSigned.IsPresent
-	} | select -expand path | % {
+    $project.object.references | where-object {
+        (-not $_.strongname) -or $IncludeSigned.IsPresent
+    } | select -expand path | % {
 
-		$path = $_
+        $path = $_
 
-		#new-object io.fileinfo $_ | add-member 
-	}
+        #new-object io.fileinfo $_ | add-member 
+    }
 }

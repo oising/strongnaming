@@ -41,6 +41,12 @@
     <Compile Include="Dummy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DummyReferenceLibrary\DummyReferenceLibrary.csproj">
+      <Project>{ad703812-f508-4ae0-b0bf-6a8f70d777fe}</Project>
+      <Name>DummyReferenceLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

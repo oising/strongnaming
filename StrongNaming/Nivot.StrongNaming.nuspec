@@ -13,14 +13,16 @@
         <releaseNotes>Nivot.StrongNaming
 ==================
 
-- v1.0.0  [2013/04/29]
-  Initial release.
-
-- v1.0.1  [2013/04/29]
-  Updated metadata.
-
-- v1.0.2  [2013/04/30]
-  Added license and project URL.
+* v1.0.3  [2014/01/26]
+  * Assembly references without a strongname will be given a  strong name using the same
+    public key token as the primary target assembly.
+* v1.0.2  [2013/04/30]
+  * Added license and project URL.
+  * Added readme.MD
+* v1.0.1  [2013/04/29]
+  * Updated metadata.
+* v1.0.0  [2013/04/29]
+  * Initial release.
 
 Details
 =======

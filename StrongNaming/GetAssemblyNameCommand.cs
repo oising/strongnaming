@@ -11,7 +11,15 @@ namespace StrongNaming
     {
         protected override void ProcessAssemblyFile(string filePath)
         {
-            WriteObject(AssemblyName.GetAssemblyName(filePath));
+            var name = AssemblyName.GetAssemblyName(filePath);
+            var psobj = PSObject.AsPSObject(name);
+            
+            var definition = AssemblyDefinition.ReadAssembly(filePath);
+            psobj.Properties.Add(
+                new PSNoteProperty("AssemblyReferences",
+                    definition.MainModule.AssemblyReferences));
+
+            WriteObject(psobj);
         }
     }
 }

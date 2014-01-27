@@ -1,14 +1,16 @@
 ﻿Nivot.StrongNaming
 ==================
 
-* v1.0.0  [2013/04/29]
-  * Initial release.
-* v1.0.1  [2013/04/29]
-  * Updated metadata.
+* v1.0.3  [2014/01/26]
+  * Assembly references without a strongname will be given a  strong name using the same
+    public key token as the primary target assembly.
 * v1.0.2  [2013/04/30]
   * Added license and project URL.
   * Added readme.MD
-
+* v1.0.1  [2013/04/29]
+  * Updated metadata.
+* v1.0.0  [2013/04/29]
+  * Initial release.
 
 About
 -----
@@ -37,7 +39,9 @@ bind to piped files.
 
 * `Set-StrongName [-AssemblyFile] <string[]> -KeyPair <StrongNameKeyPair> [-NoBackup] [-Passthru] [-Force] [-DelaySign] [-WhatIf] [-Confirm]  [<CommonParameters>]`
 
-    Assigns a strong name identity to an assembly.
+    Assigns a strong name identity to an assembly. Any unsigned assembly references will also be
+    updated to use a strong name, using the same public key token as the primary assembly. The
+    referenced assemblies will need be to located and given a strong name separately.
 
     The `-KeyPair` parameter accepts a `System.Reflection.StrongNameKeyPair` output from the
 	`Import-StrongNameKeyPair` cmdlet., which accepts either simple unprotected SNK files or

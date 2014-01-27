@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+//using System.Configuration.Assemblies;
+using System.IO;
 using System.Linq;
 using System.Management.Automation;
 using System.Reflection;
@@ -8,11 +10,11 @@ using Mono.Cecil;
 namespace StrongNaming
 {
     [OutputType(typeof(FileInfo))]
-    [Cmdlet(VerbsCommon.Set, NounStrongName, SupportsShouldProcess = true)]
+    [Cmdlet(VerbsCommon.Set, NounStrongName, SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     public class SetStrongNameCommand : StrongNameCommandBase
     {
         private string _actionText;
-
+        
         [Parameter(Mandatory = true,
             HelpMessage = "Use Import-StrongNameKeyPair to create this" +
                 " parameter from an SNK or PFX file.")]
@@ -40,9 +42,10 @@ namespace StrongNaming
         }
 
         protected override void ProcessAssemblyFile(string filePath)
-        {           
+        {
             var assembly = AssemblyDefinition.ReadAssembly(filePath);
 
+            // Support -WhatIf
             if (ShouldProcess(assembly.FullName, _actionText))
             {
                 if (assembly.Name.HasPublicKey && (!Force.IsPresent))
@@ -74,33 +77,62 @@ namespace StrongNaming
                 assembly.Name.Attributes &= AssemblyAttributes.PublicKey;
 
                 byte[] token = GetKeyTokenFromKey(KeyPair.PublicKey);
-                foreach (var reference in assembly.MainModule.AssemblyReferences)
-                {
-                    if (reference.PublicKeyToken.Length != 0)
-                        continue;
+                bool aborting = false;
 
-                    reference.PublicKeyToken = token;
-                }
-
-                if (DelaySign.IsPresent)
+                // Does the primary assembly have any unsigned references?
+                if (assembly.MainModule.AssemblyReferences.Any(reference => reference.PublicKeyToken.Length == 0))
                 {
-                    assembly.Write(filePath);
-                    WriteVerbose("Using delay-signing.");
-                }
-                else
-                {
-                    assembly.Write(filePath,
-                        new WriterParameters
+                    if (Force ||
+                        ShouldContinue(
+                            "One or more assembly references are not referencing strong named assemblies. " +
+                            "If you continue, these references will be updated to use the same public key token " +
+                            "as the primary assembly. Use -Force to avoid this prompt in future." +
+                            "\n\nNOTE: The referenced assemblies will still need to be given a strong name " +
+                            "or this assembly will fail to load at runtime.",
+                            "Assembly References"))
+                    {
+                        foreach (var reference in assembly.MainModule.AssemblyReferences)
                         {
-                            StrongNameKeyPair = KeyPair
-                        });
+                            WriteVerbose("Examining " + reference.Name);
+
+                            if (reference.PublicKeyToken.Length > 0)
+                            {
+                                WriteVerbose("Skipping signed reference " + reference.Name);
+                                continue;
+                            }
+
+                            WriteVerbose("Setting public key token for reference: " + reference.Name);
+                            reference.PublicKeyToken = token;
+                        }
+                    }
+                    else
+                    {
+                        aborting = true;
+                    }
                 }
 
-                WriteVerbose("Assembly file " + filePath + " was (re)signed successfully.");
-
-                if (Passthru)
+                if (!aborting)
                 {
-                    WriteObject(new FileInfo(filePath));
+                    if (DelaySign.IsPresent)
+                    {
+                        assembly.Write(filePath);
+                        WriteVerbose("Using delay-signing.");
+                    }
+                    else
+                    {
+                        assembly.Write(filePath,
+                            new WriterParameters
+                            {
+                                StrongNameKeyPair = KeyPair
+                            });
+                    }
+
+                    WriteVerbose("Assembly file " + filePath + " was (re)signed successfully.");
+
+                    if (Passthru)
+                    {
+                        WriteObject(new FileInfo(filePath));
+                    }
                 }
             }
         }
@@ -108,8 +140,10 @@ namespace StrongNaming
         private static byte[] GetKeyTokenFromKey(byte[] fullKey)
         {
             byte[] hash;
-            using (SHA1 sha1 = SHA1CryptoServiceProvider.Create())
-                hash = sha1.ComputeHash (fullKey);
+            using (var sha1 = SHA1.Create())
+            {
+                hash = sha1.ComputeHash(fullKey);
+            }
 
             return hash.Reverse().Take(8).ToArray();
         }
