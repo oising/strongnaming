@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>Nivot.StrongNaming</id>
-        <version>1.0.2</version>
+        <version>1.0.3</version>
         <title>Assembly Strong Naming Toolkit</title>
         <authors>oisin</authors>
         <owners>Oisin Grehan</owners>
