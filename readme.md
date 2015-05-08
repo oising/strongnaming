@@ -88,4 +88,4 @@ FAQ: How Do I?
     PM> dir -rec *.dll | set-strongname -keypair $key -force
 
 ### Sign only unsigned assemblies 
-    PM> dir -rec *.dll | where { -not (test-strongname $_) } | set-strongname -keypair $key -verbose
+    PM> dir -rec *.dll | where { -not (test-strongname $_.fullname) } | set-strongname -keypair $key -verbose
