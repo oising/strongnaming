@@ -43,7 +43,22 @@ namespace StrongNaming
 
         protected override void ProcessAssemblyFile(string filePath)
         {
-            var assembly = AssemblyDefinition.ReadAssembly(filePath);
+            AssemblyDefinition assembly;
+            try
+            {
+                assembly = AssemblyDefinition.ReadAssembly(filePath);
+            }
+            catch (BadImageFormatException e)
+            {
+                // TODO: localize
+                WriteError(
+                    new ErrorRecord(
+                        e,
+                        filePath + " is not a valid .NET assembly.",
+                        ErrorCategory.InvalidOperation,
+                        filePath));
+                return;
+            }
 
             // Support -WhatIf
             if (ShouldProcess(assembly.FullName, _actionText))

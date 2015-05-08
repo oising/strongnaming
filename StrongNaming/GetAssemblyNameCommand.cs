@@ -11,9 +11,26 @@ namespace StrongNaming
     {
         protected override void ProcessAssemblyFile(string filePath)
         {
-            var name = AssemblyName.GetAssemblyName(filePath);
+            AssemblyName name;
+
+            try
+            {
+                name = AssemblyName.GetAssemblyName(filePath);
+            }
+            catch (BadImageFormatException e)
+            {
+                // TODO: localize
+                WriteError(
+                    new ErrorRecord(
+                        e,
+                        filePath + " is not a valid .NET assembly.",
+                        ErrorCategory.InvalidOperation,
+                        filePath));
+                return;
+            }
+
             var psobj = PSObject.AsPSObject(name);
-            
+
             var definition = AssemblyDefinition.ReadAssembly(filePath);
             psobj.Properties.Add(
                 new PSNoteProperty("AssemblyReferences",
