@@ -1,3 +1,1 @@
-param($installPath, $toolsPath, $package)
-
-import-module (join-path $toolsPath StrongNaming.psd1)
+import-module (join-path $PSScriptRoot StrongNaming.psd1)
