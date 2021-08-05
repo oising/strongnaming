@@ -37,7 +37,8 @@ bind to piped files.
     Imports a simple unprotected SNK or a password-protected PFX, returning a StrongNameKeyPair
 	instance for consumption by Set-StrongName. If your PFX file has a blank password, you must
 	provide a SecureString of the empty string "". SecureString instances are returned from
-    the Read-Host cmdlet with the -AsSecureString parameter.
+    the Read-Host cmdlet with the -AsSecureString parameter. For automation scenarios, use the
+    ConvertTo-SecureString cmdlet.
 
 * `Set-StrongName [-AssemblyFile] <string[]> -KeyPair <StrongNameKeyPair> [-NoBackup] [-Passthru] [-Force] [-DelaySign] [-WhatIf] [-Confirm]  [<CommonParameters>]`
 
