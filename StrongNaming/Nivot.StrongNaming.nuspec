@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>Nivot.StrongNaming</id>
-        <version>1.0.3</version>
+        <version>2.0.0</version>
         <title>Assembly Strong Naming Toolkit</title>
         <authors>oisin</authors>
         <owners>Oisin Grehan</owners>
@@ -12,6 +12,9 @@
         <summary>A set of PowerShell Cmdlets to facilitate signing of unsigned 3rd party assemblies with a key of your choice, to allow them to be referenced by strongly named projects.</summary>
         <releaseNotes>Nivot.StrongNaming
 ==================
+
+* v2.0.0 [2025/05/25]
+  * upgrade to net48
 
 * v1.0.3  [2014/01/26]
   * Assembly references without a strongname will be given a  strong name using the same
