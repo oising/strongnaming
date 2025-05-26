@@ -3,6 +3,10 @@
 
 [![Join the chat at https://gitter.im/oising/strongnaming](https://badges.gitter.im/oising/strongnaming.svg)](https://gitter.im/oising/strongnaming?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+* v2.0.0 [2025/05/26]
+  * Upgraded to net48
+  * This release is NOT on nuget -- see net48 branch. After all this time, bumping the package to 2.0.0 may well wreack havoc in 10 year old CI pipelines that depend on the current version.
+
 * v1.0.3  [2014/01/26]
   * Assembly references without a strongname will be given a  strong name using the same
     public key token as the primary target assembly.
