@@ -1,0 +1,136 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\dev\\github\\strongnaming\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{96D292D8-D29E-44FC-B3D4-72EA26E48A5A}|StrongNaming\\StrongNaming.csproj|c:\\dev\\github\\strongnaming\\strongnaming\\setstrongnamecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96D292D8-D29E-44FC-B3D4-72EA26E48A5A}|StrongNaming\\StrongNaming.csproj|solutionrelative:strongnaming\\setstrongnamecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B14DAA3-AF04-4AF7-9AE1-217937CFFBD5}|StrongNaming.Tests\\StrongNaming.Tests.csproj|C:\\dev\\github\\strongnaming\\strongnaming.tests\\tests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B14DAA3-AF04-4AF7-9AE1-217937CFFBD5}|StrongNaming.Tests\\StrongNaming.Tests.csproj|solutionrelative:strongnaming.tests\\tests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|StrongNaming||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B14DAA3-AF04-4AF7-9AE1-217937CFFBD5}|StrongNaming.Tests\\StrongNaming.Tests.csproj|C:\\dev\\github\\strongnaming\\strongnaming.tests\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{8B14DAA3-AF04-4AF7-9AE1-217937CFFBD5}|StrongNaming.Tests\\StrongNaming.Tests.csproj|solutionrelative:strongnaming.tests\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96D292D8-D29E-44FC-B3D4-72EA26E48A5A}|StrongNaming\\StrongNaming.csproj|C:\\dev\\github\\strongnaming\\strongnaming\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{96D292D8-D29E-44FC-B3D4-72EA26E48A5A}|StrongNaming\\StrongNaming.csproj|solutionrelative:strongnaming\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96D292D8-D29E-44FC-B3D4-72EA26E48A5A}|StrongNaming\\StrongNaming.csproj|C:\\dev\\github\\strongnaming\\strongnaming\\postbuildscripts\\buildnewpackage-ranautomatically.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{96D292D8-D29E-44FC-B3D4-72EA26E48A5A}|StrongNaming\\StrongNaming.csproj|solutionrelative:strongnaming\\postbuildscripts\\buildnewpackage-ranautomatically.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96D292D8-D29E-44FC-B3D4-72EA26E48A5A}|StrongNaming\\StrongNaming.csproj|C:\\dev\\github\\strongnaming\\strongnaming\\getassemblynamecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96D292D8-D29E-44FC-B3D4-72EA26E48A5A}|StrongNaming\\StrongNaming.csproj|solutionrelative:strongnaming\\getassemblynamecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Tests.cs",
+              "DocumentMoniker": "C:\\dev\\github\\strongnaming\\StrongNaming.Tests\\Tests.cs",
+              "RelativeDocumentMoniker": "StrongNaming.Tests\\Tests.cs",
+              "ToolTip": "C:\\dev\\github\\strongnaming\\StrongNaming.Tests\\Tests.cs",
+              "RelativeToolTip": "StrongNaming.Tests\\Tests.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAwDEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T14:08:27.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "packages.config",
+              "DocumentMoniker": "C:\\dev\\github\\strongnaming\\StrongNaming.Tests\\packages.config",
+              "RelativeDocumentMoniker": "StrongNaming.Tests\\packages.config",
+              "ToolTip": "C:\\dev\\github\\strongnaming\\StrongNaming.Tests\\packages.config",
+              "RelativeToolTip": "StrongNaming.Tests\\packages.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-05-26T14:18:10.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GetAssemblyNameCommand.cs",
+              "DocumentMoniker": "C:\\dev\\github\\strongnaming\\StrongNaming\\GetAssemblyNameCommand.cs",
+              "RelativeDocumentMoniker": "StrongNaming\\GetAssemblyNameCommand.cs",
+              "ToolTip": "C:\\dev\\github\\strongnaming\\StrongNaming\\GetAssemblyNameCommand.cs",
+              "RelativeToolTip": "StrongNaming\\GetAssemblyNameCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T14:12:31.469Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "packages.config",
+              "DocumentMoniker": "C:\\dev\\github\\strongnaming\\StrongNaming\\packages.config",
+              "RelativeDocumentMoniker": "StrongNaming\\packages.config",
+              "ToolTip": "C:\\dev\\github\\strongnaming\\StrongNaming\\packages.config",
+              "RelativeToolTip": "StrongNaming\\packages.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-05-26T14:10:54.936Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SetStrongNameCommand.cs",
+              "DocumentMoniker": "C:\\dev\\github\\strongnaming\\StrongNaming\\SetStrongNameCommand.cs",
+              "RelativeDocumentMoniker": "StrongNaming\\SetStrongNameCommand.cs",
+              "ToolTip": "C:\\dev\\github\\strongnaming\\StrongNaming\\SetStrongNameCommand.cs",
+              "RelativeToolTip": "StrongNaming\\SetStrongNameCommand.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAWwIcAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T14:08:52.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BuildNewPackage-RanAutomatically.ps1",
+              "DocumentMoniker": "C:\\dev\\github\\strongnaming\\StrongNaming\\PostBuildScripts\\BuildNewPackage-RanAutomatically.ps1",
+              "RelativeDocumentMoniker": "StrongNaming\\PostBuildScripts\\BuildNewPackage-RanAutomatically.ps1",
+              "ToolTip": "C:\\dev\\github\\strongnaming\\StrongNaming\\PostBuildScripts\\BuildNewPackage-RanAutomatically.ps1",
+              "RelativeToolTip": "StrongNaming\\PostBuildScripts\\BuildNewPackage-RanAutomatically.ps1",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-26T14:13:07.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StrongNaming",
+              "DocumentMoniker": "C:\\dev\\github\\strongnaming\\StrongNaming\\StrongNaming.csproj",
+              "RelativeDocumentMoniker": "StrongNaming\\StrongNaming.csproj",
+              "ToolTip": "C:\\dev\\github\\strongnaming\\StrongNaming\\StrongNaming.csproj",
+              "RelativeToolTip": "StrongNaming\\StrongNaming.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-26T14:13:37.117Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

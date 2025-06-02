@@ -32,7 +32,7 @@ namespace StrongNaming.Tests
         public void Init()
         {
             var ps = PowerShell.Create();
-            ps.AddScript("ipmo .\nivot.powershell.strongnaming.dll").Invoke();
+            ps.AddScript("ipmo ./nivot.powershell.strongnaming.dll").Invoke();
             TestContext.Properties.Add(ShellKey, ps);
         }
 
@@ -49,9 +49,9 @@ namespace StrongNaming.Tests
         {
             var result =
                 Shell.AddScript(
-                    "$k = import-strongnamekeypair .\\key.snk;" +
-                    "set-strongname .\\dummylibrary.dll -force -key $k;" +
-                    "test-strongname .\\dummylibrary.dll")
+                    "$k = import-strongnamekeypair ./key.snk -verbose;" +
+                    "set-strongname ./dummylibrary.dll -force -key $k -nobackup -verbose;" +
+                    "test-strongname ./dummylibrary.dll -verbose")
                     .Invoke<bool>().Single();
 
             Assert.IsTrue(result, "Assembly was not signed.");
